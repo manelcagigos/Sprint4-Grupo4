@@ -11,7 +11,6 @@ C:\Users\jmdgb\Desktop\GS DAM\GS2\M13\Sprint4\Sprint4-Grupo4\Sprint4\Sprint4\obj
 E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\bin\Debug\Sprint4.exe.config
 E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\bin\Debug\Sprint4.exe
 E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\bin\Debug\Sprint4.pdb
-E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\obj\Debug\Sprint4.csproj.AssemblyReference.cache
 E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\obj\Debug\Sprint4.FormPrincipal.resources
 E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\obj\Debug\Sprint4.Properties.Resources.resources
 E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\obj\Debug\Sprint4.csproj.GenerateResource.cache

@@ -22,6 +22,7 @@ namespace Sprint4
         string SecureCode;
         int counter = 60;
         SerialPort portArduino = new SerialPort();
+        string codiArduino = "";
         private void Form1_Load(object sender, EventArgs e)
         {
             string[] ports;
@@ -108,8 +109,18 @@ namespace Sprint4
                     label1.Text = counter.ToString();
 
                     lb_codigo.Text = SecureCode;
+
+                    portArduino.DataReceived += new SerialDataReceivedEventHandler(SerialPort_DataReceived);
+
+                    //lb_codigo.Text = codiArduino;
                 }
             }   
+        }
+
+        private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            codiArduino = portArduino.ReadLine();
+            lb_codigo.Text = codiArduino;
         }
 
         private void cmb_portsD_SelectedIndexChanged(object sender, EventArgs e)
