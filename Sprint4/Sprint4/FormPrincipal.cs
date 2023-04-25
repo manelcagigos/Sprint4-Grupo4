@@ -18,6 +18,7 @@ namespace Sprint4
         {
             InitializeComponent();
         }
+
         string SecureCode;
         int counter = 60;
         SerialPort portArduino = new SerialPort();
@@ -68,6 +69,7 @@ namespace Sprint4
             {
                 timer1.Stop();
                 if (portArduino.IsOpen) portArduino.Close();
+                MessageBox.Show("Se te ha acabado el tiempo");
                 Application.Exit();
             }
             label1.Text = counter.ToString();
@@ -77,22 +79,37 @@ namespace Sprint4
         {
             portArduino.Open();
             portArduino.Write("SA");
-            portArduino.Close();
+            //portArduino.Close();
+
             //enviarmail
 
         }
 
         private void btn_conn_Click(object sender, EventArgs e)
-        {            
-            
-            SendStartArdu();
+        {
+            if (portArduino.IsOpen)
+            {
+                MessageBox.Show("Ya estas conectado al Arduino");
+            }
+            else
+            {
+                if (cmb_portsD.Text == "")
+                {
+                    MessageBox.Show("Se tiene que seleccionar un puerto");
+                }
+                else
+                {
+                    SendStartArdu();
 
-            timer1 = new Timer();
-            timer1.Tick += new EventHandler(timer1_Tick);
-            timer1.Interval = 1000; // 1 segundo
-            timer1.Start();
-            label1.Text = counter.ToString();
+                    timer1 = new Timer();
+                    timer1.Tick += new EventHandler(timer1_Tick);
+                    timer1.Interval = 1000; // 1 segundo
+                    timer1.Start();
+                    label1.Text = counter.ToString();
 
+                    lb_codigo.Text = SecureCode;
+                }
+            }   
         }
 
         private void cmb_portsD_SelectedIndexChanged(object sender, EventArgs e)
