@@ -7,6 +7,7 @@ using System.IO.Ports;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -86,6 +87,26 @@ namespace Sprint4
 
         }
 
+        Thread leerPuerto;
+        private void metodoleerPuerto()
+        {
+            bool noIgual = false;
+
+            while (!noIgual)
+            {
+                if (portArduino.BytesToRead > 0)
+                {
+                    string data = portArduino.ReadExisting();
+
+                    if (data.Contains(SecureCode))
+                    {
+                        lb_codigo.Text = "EL CODI ES IGUAL!!!";
+                        noIgual = true;
+                    }
+                }
+            }
+        }
+
         private void btn_conn_Click(object sender, EventArgs e)
         {
             if (portArduino.IsOpen)
@@ -100,9 +121,11 @@ namespace Sprint4
                 }
                 else
                 {
+                    portArduino.DataReceived += new SerialDataReceivedEventHandler(SerialPort_DataReceived);
+
                     SendStartArdu();
 
-                    timer1 = new Timer();
+                    timer1 = new System.Windows.Forms.Timer();
                     timer1.Tick += new EventHandler(timer1_Tick);
                     timer1.Interval = 1000; // 1 segundo
                     timer1.Start();
@@ -110,9 +133,7 @@ namespace Sprint4
 
                     lb_codigo.Text = SecureCode;
 
-                    portArduino.DataReceived += new SerialDataReceivedEventHandler(SerialPort_DataReceived);
-
-                    //lb_codigo.Text = codiArduino;
+                    metodoleerPuerto();
                 }
             }   
         }
@@ -120,12 +141,17 @@ namespace Sprint4
         private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             codiArduino = portArduino.ReadLine();
-            lb_codigo.Text = codiArduino;
+            string indata = portArduino.ReadExisting();
         }
 
         private void cmb_portsD_SelectedIndexChanged(object sender, EventArgs e)
         {
             portArduino = new SerialPort(cmb_portsD.SelectedItem.ToString(), 9600);
+        }
+
+        private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            portArduino.Close();
         }
     }
 }
