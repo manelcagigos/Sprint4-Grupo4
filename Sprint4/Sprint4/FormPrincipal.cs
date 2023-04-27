@@ -24,6 +24,31 @@ namespace Sprint4
         int counter = 60;
         SerialPort portArduino = new SerialPort();
         string codiArduino = "";
+        Thread t1;
+        private void metodoleerPuerto()
+        {
+            bool noIgual = false;
+
+            while (!noIgual)
+            {
+                if (portArduino.IsOpen)
+                {
+                    if (portArduino.BytesToRead > 0)
+                    {
+                        codiArduino = portArduino.ReadExisting();
+                        //codiArduino = codiArduino.Trim();
+                        if (codiArduino.Contains(SecureCode))
+                        {
+                            noIgual = true;
+                        }
+                    }
+                }
+            }
+
+            
+            
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             string[] ports;
@@ -48,6 +73,11 @@ namespace Sprint4
                 }
             }
 
+            t1 = new Thread(() =>
+            {
+                metodoleerPuerto();
+            });
+            t1.Start();
         }
 
         private int numaleatori()
@@ -71,10 +101,19 @@ namespace Sprint4
             {
                 timer1.Stop();
                 if (portArduino.IsOpen) portArduino.Close();
+                t1.Abort();
                 MessageBox.Show("Se te ha acabado el tiempo");
                 Application.Exit();
             }
             label1.Text = counter.ToString();
+
+            if (codiArduino == SecureCode)
+            {
+                lb_codigo.Text = "EL CODI ES CORRECTE!!!";
+                t1.Abort();
+                portArduino.Close();
+                timer1.Stop();
+            }
         }
 
         private void SendStartArdu()
@@ -85,26 +124,6 @@ namespace Sprint4
 
             //enviarmail
 
-        }
-
-        Thread leerPuerto;
-        private void metodoleerPuerto()
-        {
-            bool noIgual = false;
-
-            while (!noIgual)
-            {
-                if (portArduino.BytesToRead > 0)
-                {
-                    string data = portArduino.ReadExisting();
-
-                    if (data.Contains(SecureCode))
-                    {
-                        lb_codigo.Text = "EL CODI ES IGUAL!!!";
-                        noIgual = true;
-                    }
-                }
-            }
         }
 
         private void btn_conn_Click(object sender, EventArgs e)
@@ -132,8 +151,6 @@ namespace Sprint4
                     label1.Text = counter.ToString();
 
                     lb_codigo.Text = SecureCode;
-
-                    metodoleerPuerto();
                 }
             }   
         }
@@ -151,6 +168,10 @@ namespace Sprint4
 
         private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (t1.IsAlive)
+            {
+                t1.Abort();
+            }
             portArduino.Close();
         }
     }
