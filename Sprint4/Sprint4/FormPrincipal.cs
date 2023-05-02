@@ -35,11 +35,17 @@ namespace Sprint4
                 {
                     if (portArduino.BytesToRead > 0)
                     {
-                        codiArduino = portArduino.ReadExisting();
+                        codiArduino = portArduino.ReadLine();
                         //codiArduino = codiArduino.Trim();
-                        if (codiArduino.Contains(SecureCode))
+                        if (codiArduino == SecureCode)
                         {
+                            portArduino.Close();
                             noIgual = true;
+                            MessageBox.Show("CODIGO CORRECTO");
+                        }
+                        else
+                        {
+                            MessageBox.Show("CODIGO ERRONEO");
                         }
                     }
                 }
@@ -73,10 +79,7 @@ namespace Sprint4
                 }
             }
 
-            t1 = new Thread(() =>
-            {
-                metodoleerPuerto();
-            });
+            t1 = new Thread(metodoleerPuerto);
             t1.Start();
         }
 
