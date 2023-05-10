@@ -39,7 +39,13 @@ namespace Sprint4
             this.tbCodiArduino = new System.Windows.Forms.TextBox();
             this.btVerificarCodiTemporal = new System.Windows.Forms.Button();
             this.gbVerificacioCodiTemporal = new System.Windows.Forms.GroupBox();
+            this.gbSegonaVerificacio = new System.Windows.Forms.GroupBox();
+            this.lbCoordenada = new System.Windows.Forms.Label();
+            this.btVerificarCoordenada = new System.Windows.Forms.Button();
+            this.tbCodiCoordenada = new System.Windows.Forms.TextBox();
+            this.btObrirCoordenadas = new System.Windows.Forms.Button();
             this.gbVerificacioCodiTemporal.SuspendLayout();
+            this.gbSegonaVerificacio.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbTimer
@@ -139,12 +145,74 @@ namespace Sprint4
             this.gbVerificacioCodiTemporal.TabStop = false;
             this.gbVerificacioCodiTemporal.Text = "Primera Verificacio";
             // 
+            // gbSegonaVerificacio
+            // 
+            this.gbSegonaVerificacio.Controls.Add(this.btObrirCoordenadas);
+            this.gbSegonaVerificacio.Controls.Add(this.lbCoordenada);
+            this.gbSegonaVerificacio.Controls.Add(this.btVerificarCoordenada);
+            this.gbSegonaVerificacio.Controls.Add(this.tbCodiCoordenada);
+            this.gbSegonaVerificacio.Font = new System.Drawing.Font("OCR A Extended", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbSegonaVerificacio.ForeColor = System.Drawing.Color.White;
+            this.gbSegonaVerificacio.Location = new System.Drawing.Point(95, 261);
+            this.gbSegonaVerificacio.Name = "gbSegonaVerificacio";
+            this.gbSegonaVerificacio.Size = new System.Drawing.Size(434, 136);
+            this.gbSegonaVerificacio.TabIndex = 9;
+            this.gbSegonaVerificacio.TabStop = false;
+            this.gbSegonaVerificacio.Text = "Segona Verificacio";
+            // 
+            // lbCoordenada
+            // 
+            this.lbCoordenada.AutoSize = true;
+            this.lbCoordenada.Font = new System.Drawing.Font("OCR A Extended", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCoordenada.ForeColor = System.Drawing.Color.White;
+            this.lbCoordenada.Location = new System.Drawing.Point(50, 33);
+            this.lbCoordenada.Name = "lbCoordenada";
+            this.lbCoordenada.Size = new System.Drawing.Size(153, 23);
+            this.lbCoordenada.TabIndex = 4;
+            this.lbCoordenada.Text = "COORDENADA ";
+            // 
+            // btVerificarCoordenada
+            // 
+            this.btVerificarCoordenada.Font = new System.Drawing.Font("OCR A Extended", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btVerificarCoordenada.ForeColor = System.Drawing.Color.Black;
+            this.btVerificarCoordenada.Location = new System.Drawing.Point(250, 75);
+            this.btVerificarCoordenada.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btVerificarCoordenada.Name = "btVerificarCoordenada";
+            this.btVerificarCoordenada.Size = new System.Drawing.Size(139, 46);
+            this.btVerificarCoordenada.TabIndex = 7;
+            this.btVerificarCoordenada.Text = "Verificar";
+            this.btVerificarCoordenada.UseVisualStyleBackColor = true;
+            // 
+            // tbCodiCoordenada
+            // 
+            this.tbCodiCoordenada.BackColor = System.Drawing.Color.Black;
+            this.tbCodiCoordenada.Enabled = false;
+            this.tbCodiCoordenada.Font = new System.Drawing.Font("OCR A Extended", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCodiCoordenada.ForeColor = System.Drawing.Color.White;
+            this.tbCodiCoordenada.Location = new System.Drawing.Point(54, 69);
+            this.tbCodiCoordenada.Name = "tbCodiCoordenada";
+            this.tbCodiCoordenada.Size = new System.Drawing.Size(175, 28);
+            this.tbCodiCoordenada.TabIndex = 6;
+            // 
+            // btObrirCoordenadas
+            // 
+            this.btObrirCoordenadas.Font = new System.Drawing.Font("OCR A Extended", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btObrirCoordenadas.ForeColor = System.Drawing.Color.Black;
+            this.btObrirCoordenadas.Location = new System.Drawing.Point(251, 19);
+            this.btObrirCoordenadas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btObrirCoordenadas.Name = "btObrirCoordenadas";
+            this.btObrirCoordenadas.Size = new System.Drawing.Size(139, 46);
+            this.btObrirCoordenadas.TabIndex = 8;
+            this.btObrirCoordenadas.Text = "Obrir Taula Coord";
+            this.btObrirCoordenadas.UseVisualStyleBackColor = true;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1215, 586);
+            this.Controls.Add(this.gbSegonaVerificacio);
             this.Controls.Add(this.gbVerificacioCodiTemporal);
             this.Controls.Add(this.lb_PortsDisponibles);
             this.Controls.Add(this.btn_conn);
@@ -159,6 +227,8 @@ namespace Sprint4
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gbVerificacioCodiTemporal.ResumeLayout(false);
             this.gbVerificacioCodiTemporal.PerformLayout();
+            this.gbSegonaVerificacio.ResumeLayout(false);
+            this.gbSegonaVerificacio.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,6 +245,11 @@ namespace Sprint4
         private System.Windows.Forms.TextBox tbCodiArduino;
         private System.Windows.Forms.Button btVerificarCodiTemporal;
         private System.Windows.Forms.GroupBox gbVerificacioCodiTemporal;
+        private System.Windows.Forms.GroupBox gbSegonaVerificacio;
+        private System.Windows.Forms.Label lbCoordenada;
+        private System.Windows.Forms.Button btVerificarCoordenada;
+        private System.Windows.Forms.TextBox tbCodiCoordenada;
+        private System.Windows.Forms.Button btObrirCoordenadas;
     }
 }
 
