@@ -191,5 +191,10 @@ namespace Sprint4
                 }
             }
         }
+
+        private void btObrirCoordenadas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
