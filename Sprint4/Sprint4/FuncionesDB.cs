@@ -80,6 +80,56 @@ namespace MESSI
             return dts;
         }
 
+        public SqlConnection Connect()
+        {
+            SqlConnection conn;
+            string cnx = ConfigurationManager.ConnectionStrings["DataConnection"].ConnectionString;
+
+            conn = new SqlConnection(cnx);
+
+            return conn;
+        }
+
+        public void Ejecutar(string query)
+        {
+            try
+            {
+                SqlConnection conn = Connect();
+
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                int registresAfectats = cmd.ExecuteNonQuery();
+
+                cmd.Dispose();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public DataSet GetByQuerry(string querry)
+        {
+            try
+            {
+                SqlConnection conn = Connect();
+                SqlDataAdapter adapter = new SqlDataAdapter(querry, conn);
+
+                conn.Open();
+                DataSet dts = new DataSet();
+                adapter.Fill(dts);
+                conn.Close();
+
+                return dts;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public DataSet PortarPerConsulta(string Consulta, string nomDataTable)
         {
             dts = new DataSet();

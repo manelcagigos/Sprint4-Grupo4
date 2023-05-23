@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QRCoder;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -6,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -103,8 +105,29 @@ namespace Sprint4
 
             if (qrOK)
             {
-                Ejecutar("insert into CodeChain values(" + tb_usercode.Text+"," +codechain+ "," +QR+ ");");
-                //(falta codechain y QR)
+                if (GetByQuerry("select * from Users where idUser =" + tb_usercode).Tables.Count > 0)
+                {
+
+                    QRCodeGenerator qr = new QRCodeGenerator();
+                    string dataqr = textBox1.Text + textBox2.Text + textBox3.Text + textBox4.Text + textBox5.Text;
+                    string codeChainMasked;
+                    QRCodeData qdat = qr.CreateQrCode(dataqr, QRCodeGenerator.ECCLevel.Q);
+                    QRCode code = new QRCode(qdat);
+
+                    using (SHA256 hash = SHA256.Create())
+
+                    {
+
+                        byte[] hashedBytes = hash.ComputeHash(Encoding.UTF8.GetBytes(dataqr));
+
+                        string strHash = BitConverter.ToString(hashedBytes);
+
+                        codeChainMasked = strHash;
+
+                    }
+
+                    Ejecutar("insert into CodeChain values(" + tb_usercode.Text + "," + codeChainMasked + "," + code + ");");
+                };
             }
             else
             {
@@ -115,6 +138,12 @@ namespace Sprint4
         private void ObrirTauPas1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormEscanearQR fm = new FormEscanearQR();
+            fm.Show();
         }
     }
 }
