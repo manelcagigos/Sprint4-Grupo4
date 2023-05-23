@@ -81,6 +81,26 @@ namespace Sprint4
                 }
             }
 
+            //En el insert de abajo, el primer elemento no es lo escrito en el textbox.
+            //En el textbox el usuario escribira el codigo de usuario, que si lo miras en la base de datos (dbo.Users - Campo: codeUser)
+            //Es su nombre, con ese texto del tb_usercode tiene que extraer la id de la base de datos, y eso es lo que guardaras
+            //En la tabla CodeChain de la base de datos, pero piensa que primero va el id del codeChain, se supone que si usas la clase que sube
+            //el dts a la base de datos, en vez de un insert, te tendria que poner automaticamente la id, es la unica manera para no repetir id nunca.
+            //Luego codechain es el elemento que te genera al juntar todos los otros elementos y crear el qr, y qr no se lo que es.
+            //Mira el enlace de abajo del todo de la ficha, para la creacion de qr's en c#.
+
+            //Te he añadido la clase FuncionesDB, que estan todas las clases necesarias para actulizar y hacer cualquier cosa relacionada con la base de datos.
+
+            //Una vez este todo esto hecho, tiene que haver otro boton, o el mismo, pero tendra que esperar a que acabe de subir lo datos primero.
+            //Debera abrir un nuevo formulario (FormEscanearQR), en este formulario podra introducir su codeUser y buscara en la base de datos
+            //su nombre completo (no existe, deberia estar en DescUser, pero estan vacios esos campos).
+            //Un picturebox para la camara, si miras el primer video que hay en la ficha para generar el qr lo entendras al momento.
+            //Y un textbox multilinea (un textbox normal, en el que si clicas a la flecha en el diseñador, te deja clicar a multilinea).
+            //En este texbox aparecera los datos del qr (mirar primer video de la ficha).
+            //Y por ultimo un boton que activara la camara (picturebox) para poder scanear el qr y verificar que es correcto.
+            //Una vez este eso hecho la parte de coordenadas ya la hare yo o te ayudare, pero deberia ser un momento porque ya la tenemos hecha.
+            //El form ya esta creado, falta el codigo, ademas de acabar el de aqui.
+
             if (qrOK)
             {
                 Ejecutar("insert into CodeChain values(" + tb_usercode.Text+"," +codechain+ "," +QR+ ");");
