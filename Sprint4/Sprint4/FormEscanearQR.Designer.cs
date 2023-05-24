@@ -29,6 +29,7 @@ namespace Sprint4
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbCodiUsuari = new System.Windows.Forms.Label();
             this.tb_usercode = new System.Windows.Forms.TextBox();
             this.pictureBoxCamara = new System.Windows.Forms.PictureBox();
@@ -37,6 +38,7 @@ namespace Sprint4
             this.lbNomUsuari = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCamara)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,6 +117,10 @@ namespace Sprint4
             this.comboBox1.Size = new System.Drawing.Size(181, 24);
             this.comboBox1.TabIndex = 25;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormEscanearQR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -132,6 +138,7 @@ namespace Sprint4
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormEscanearQR";
             this.Text = "FormEscanearQR";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormEscanearQR_FormClosing);
             this.Load += new System.EventHandler(this.FormEscanearQR_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCamara)).EndInit();
             this.ResumeLayout(false);
@@ -149,5 +156,6 @@ namespace Sprint4
         private System.Windows.Forms.Label lbNomUsuari;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

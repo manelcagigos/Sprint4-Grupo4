@@ -75,12 +75,16 @@ namespace Sprint4
         {
             bool qrOK = true;
 
-            foreach (TextBox item in this.Controls)
+            foreach (Control item in this.Controls)
             {
-                if (item.Text == "")
+                if (item is TextBox)
                 {
-                    qrOK = false;
+                    if (item.Text == "")
+                    {
+                        qrOK = false;
+                    }
                 }
+
             }
 
             //En el insert de abajo, el primer elemento no es lo escrito en el textbox.
@@ -127,7 +131,7 @@ namespace Sprint4
                     }
 
                     Ejecutar("insert into CodeChain values(" + tb_usercode.Text + "," + codeChainMasked + "," + code + ");");
-                };
+                }
             }
             else
             {

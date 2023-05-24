@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
+using ZXing;
 
 namespace Sprint4
 {
@@ -35,11 +36,16 @@ namespace Sprint4
             {
                 lbNomUsuari.Text = func.GetByQuerry("select descUser from Users where idUser = " + tb_usercode).Tables[0].AsEnumerable().First().ToString(); ; ;
                 vd = new VideoCaptureDevice(fic[comboBox1.SelectedIndex].MonikerString);
-                //vd.NewFrame += //evento newframe
+                vd.NewFrame += new NewFrameEventHandler(vd_NewFrame);
                 //video https://www.youtube.com/watch?v=0_u-9nykBrg
                 vd.Start();
             }
 
+        }
+
+        private void vd_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            pictureBoxCamara.Image = (Bitmap)eventArgs.Frame.Clone();
         }
 
         private void FormEscanearQR_Load(object sender, EventArgs e)
@@ -48,6 +54,32 @@ namespace Sprint4
             foreach (FilterInfo item in fic)
             {
                 comboBox1.Items.Add(item.Name);
+            }
+        }
+
+        private void FormEscanearQR_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (vd.IsRunning)
+            {
+                vd.Stop();
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (pictureBoxCamara.Image != null)
+            {
+                BarcodeReader br = new BarcodeReader();
+                Result rs = br.Decode((Bitmap)pictureBoxCamara.Image);
+                if (rs != null)
+                {
+                    tbMultilinea.Text = rs.ToString();
+                    timer1.Stop();
+                    if (vd.IsRunning)
+                    {
+                        vd.Stop();
+                    }
+                }
             }
         }
     }
