@@ -32,7 +32,7 @@ namespace MESSI
             //conf.Save();
 
             string cnx = "";
-            ConnectionStringSettings conf2 = ConfigurationManager.ConnectionStrings["Sprint3.Properties.Settings.DarkCoreConnectionString"];
+            ConnectionStringSettings conf2 = ConfigurationManager.ConnectionStrings["DataConnection"];
 
             if (conf2 != null)
             {

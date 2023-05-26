@@ -16,7 +16,7 @@ namespace Sprint4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ObrirTauPas1());
+            Application.Run(new FormEscanearQR());
         }
     }
 }

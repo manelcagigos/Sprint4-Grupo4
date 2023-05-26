@@ -82,5 +82,13 @@ namespace Sprint4
                 }
             }
         }
+
+        private void btPrubeas_Click(object sender, EventArgs e)
+        {
+            form_AdminCoordinates frm = new form_AdminCoordinates();
+            frm.Show();
+
+            this.Hide();
+        }
     }
 }

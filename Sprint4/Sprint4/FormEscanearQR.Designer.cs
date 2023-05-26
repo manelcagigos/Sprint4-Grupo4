@@ -39,6 +39,7 @@ namespace Sprint4
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btPrubeas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCamara)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,41 +48,44 @@ namespace Sprint4
             this.lbCodiUsuari.AutoSize = true;
             this.lbCodiUsuari.Font = new System.Drawing.Font("OCR A Extended", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCodiUsuari.ForeColor = System.Drawing.Color.White;
-            this.lbCodiUsuari.Location = new System.Drawing.Point(64, 52);
+            this.lbCodiUsuari.Location = new System.Drawing.Point(72, 65);
             this.lbCodiUsuari.Name = "lbCodiUsuari";
-            this.lbCodiUsuari.Size = new System.Drawing.Size(129, 18);
+            this.lbCodiUsuari.Size = new System.Drawing.Size(153, 23);
             this.lbCodiUsuari.TabIndex = 18;
             this.lbCodiUsuari.Text = "CODI USUARI";
             // 
             // tb_usercode
             // 
-            this.tb_usercode.Location = new System.Drawing.Point(220, 50);
+            this.tb_usercode.Location = new System.Drawing.Point(248, 62);
+            this.tb_usercode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_usercode.Name = "tb_usercode";
-            this.tb_usercode.Size = new System.Drawing.Size(100, 22);
+            this.tb_usercode.Size = new System.Drawing.Size(112, 26);
             this.tb_usercode.TabIndex = 19;
             // 
             // pictureBoxCamara
             // 
-            this.pictureBoxCamara.Location = new System.Drawing.Point(348, 10);
+            this.pictureBoxCamara.Location = new System.Drawing.Point(392, 12);
             this.pictureBoxCamara.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxCamara.Name = "pictureBoxCamara";
-            this.pictureBoxCamara.Size = new System.Drawing.Size(353, 341);
+            this.pictureBoxCamara.Size = new System.Drawing.Size(397, 426);
             this.pictureBoxCamara.TabIndex = 20;
             this.pictureBoxCamara.TabStop = false;
             // 
             // tbMultilinea
             // 
-            this.tbMultilinea.Location = new System.Drawing.Point(68, 128);
+            this.tbMultilinea.Location = new System.Drawing.Point(76, 160);
+            this.tbMultilinea.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbMultilinea.Multiline = true;
             this.tbMultilinea.Name = "tbMultilinea";
-            this.tbMultilinea.Size = new System.Drawing.Size(252, 171);
+            this.tbMultilinea.Size = new System.Drawing.Size(283, 213);
             this.tbMultilinea.TabIndex = 21;
             // 
             // btValidarQR
             // 
-            this.btValidarQR.Location = new System.Drawing.Point(123, 314);
+            this.btValidarQR.Location = new System.Drawing.Point(138, 392);
+            this.btValidarQR.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btValidarQR.Name = "btValidarQR";
-            this.btValidarQR.Size = new System.Drawing.Size(145, 35);
+            this.btValidarQR.Size = new System.Drawing.Size(163, 44);
             this.btValidarQR.TabIndex = 22;
             this.btValidarQR.Text = "VALIDAR QR";
             this.btValidarQR.UseVisualStyleBackColor = true;
@@ -91,9 +95,9 @@ namespace Sprint4
             // 
             this.lbNomUsuari.AutoSize = true;
             this.lbNomUsuari.ForeColor = System.Drawing.Color.White;
-            this.lbNomUsuari.Location = new System.Drawing.Point(218, 97);
+            this.lbNomUsuari.Location = new System.Drawing.Point(245, 121);
             this.lbNomUsuari.Name = "lbNomUsuari";
-            this.lbNomUsuari.Size = new System.Drawing.Size(46, 17);
+            this.lbNomUsuari.Size = new System.Drawing.Size(51, 20);
             this.lbNomUsuari.TabIndex = 23;
             this.lbNomUsuari.Text = "label1";
             this.lbNomUsuari.Click += new System.EventHandler(this.lbNomUsuari_Click);
@@ -103,30 +107,42 @@ namespace Sprint4
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("OCR A Extended", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(65, 94);
+            this.label2.Location = new System.Drawing.Point(73, 118);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 18);
+            this.label2.Size = new System.Drawing.Size(166, 23);
             this.label2.TabIndex = 24;
             this.label2.Text = "NOM COMPLERT";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 12);
+            this.comboBox1.Location = new System.Drawing.Point(14, 15);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(181, 24);
+            this.comboBox1.Size = new System.Drawing.Size(203, 28);
             this.comboBox1.TabIndex = 25;
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btPrubeas
+            // 
+            this.btPrubeas.Location = new System.Drawing.Point(36, 392);
+            this.btPrubeas.Name = "btPrubeas";
+            this.btPrubeas.Size = new System.Drawing.Size(96, 57);
+            this.btPrubeas.TabIndex = 26;
+            this.btPrubeas.Text = "Pruebas";
+            this.btPrubeas.UseVisualStyleBackColor = true;
+            this.btPrubeas.Click += new System.EventHandler(this.btPrubeas_Click);
+            // 
             // FormEscanearQR
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(711, 383);
+            this.ClientSize = new System.Drawing.Size(800, 479);
+            this.Controls.Add(this.btPrubeas);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbNomUsuari);
@@ -157,5 +173,6 @@ namespace Sprint4
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btPrubeas;
     }
 }

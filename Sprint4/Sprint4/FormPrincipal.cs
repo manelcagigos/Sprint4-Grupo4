@@ -65,9 +65,11 @@ namespace Sprint4
             }
         }
 
+        List<String> LletrasNumeros = new List<string>();
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            gbVerificacioCodiTemporal.Visible = false;
+            //gbVerificacioCodiTemporal.Visible = false;
 
             string[] ports;
 
@@ -93,6 +95,27 @@ namespace Sprint4
 
             t1 = new Thread(metodoleerPuerto);
             t1.Start();
+
+            //for per la creacio de les coordenades (A1 fins a D5)
+            string LletraNumero;
+            LletrasNumeros.Clear();
+            Random R = new Random();
+
+            for (char i = (char)65; i < (char)69; i++)
+            {
+                LletraNumero = Convert.ToString(i);
+                for (int j = 1; j <= 5; j++)
+                {
+                    LletraNumero += j;
+                    LletrasNumeros.Add(LletraNumero);
+                    LletraNumero = Convert.ToString(i);
+                }
+                LletraNumero = "";
+            }
+
+            LletraNumero = LletrasNumeros[R.Next(0, 21)];
+
+            lbLletraNumero.Text = LletraNumero;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -195,6 +218,25 @@ namespace Sprint4
         private void btObrirCoordenadas_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btVerificarCoordenada_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tbCodiCoordenada.Text == "" || tbCodiCoordenada.Text == null)
+                {
+                    throw new Exception("Tiene que escribir algo en el textBox");
+                }
+                else
+                {
+
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

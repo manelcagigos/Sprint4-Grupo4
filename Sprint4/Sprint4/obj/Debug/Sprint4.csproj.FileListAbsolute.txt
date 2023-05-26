@@ -17,7 +17,6 @@ E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\obj\Debug\Sprint4.csp
 E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\obj\Debug\Sprint4.csproj.CoreCompileInputs.cache
 E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\obj\Debug\Sprint4.exe
 E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\obj\Debug\Sprint4.pdb
-E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\obj\Debug\Sprint4.csproj.AssemblyReference.cache
 E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\obj\Debug\Sprint4.FormEscanearQR.resources
 E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\obj\Debug\Sprint4.ObrirTauPas1.resources
 C:\Users\jmdgb\Desktop\GS DAM\GS2\M13\Sprint4\Sprint4-Grupo4\Sprint4\Sprint4\bin\Debug\AForge.dll
@@ -33,3 +32,16 @@ C:\Users\jmdgb\Desktop\GS DAM\GS2\M13\Sprint4\Sprint4-Grupo4\Sprint4\Sprint4\bin
 C:\Users\jmdgb\Desktop\GS DAM\GS2\M13\Sprint4\Sprint4-Grupo4\Sprint4\Sprint4\bin\Debug\zxing.presentation.xml
 C:\Users\jmdgb\Desktop\GS DAM\GS2\M13\Sprint4\Sprint4-Grupo4\Sprint4\Sprint4\obj\Debug\Sprint4.FormEscanearQR.resources
 C:\Users\jmdgb\Desktop\GS DAM\GS2\M13\Sprint4\Sprint4-Grupo4\Sprint4\Sprint4\obj\Debug\Sprint4.ObrirTauPas1.resources
+E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\bin\Debug\AForge.dll
+E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\bin\Debug\AForge.Video.DirectShow.dll
+E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\bin\Debug\AForge.Video.dll
+E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\bin\Debug\QRCoder.dll
+E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\bin\Debug\zxing.dll
+E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\bin\Debug\zxing.presentation.dll
+E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\bin\Debug\AForge.xml
+E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\bin\Debug\AForge.Video.xml
+E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\bin\Debug\AForge.Video.DirectShow.xml
+E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\bin\Debug\zxing.xml
+E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\bin\Debug\zxing.presentation.xml
+E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\obj\Debug\MESSI.form_AdminCoordinates.resources
+E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\obj\Debug\Sprint4.csproj.CopyComplete
