@@ -1,4 +1,5 @@
-﻿using QRCoder;
+﻿using MESSI;
+using QRCoder;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,9 +32,9 @@ namespace Sprint4
         private void btValidarQR_Click(object sender, EventArgs e)
         {
             FuncionesDB func = new FuncionesDB();
-            if (func.GetByQuerry("select * from Users where codeUser =" + tb_usercode.Text).Tables.Count > 0)
+            if (func.GetByQuerry("select * from Users where idUser =" + tb_usercode.Text).Tables.Count > 0)
             {
-                lbNomUsuari.Text = func.GetByQuerry("select descUser from Users where codeUser = " + tb_usercode.Text).Tables[0].AsEnumerable().First()[0].ToString(); ; ;
+                lbNomUsuari.Text = func.GetByQuerry("select descUser from Users where idUser = " + tb_usercode.Text).Tables[0].AsEnumerable().First()[0].ToString();
                 vd = new VideoCaptureDevice(fic[comboBox1.SelectedIndex].MonikerString);
                 vd.NewFrame += new NewFrameEventHandler(vd_NewFrame);
                 //video https://www.youtube.com/watch?v=0_u-9nykBrg
@@ -69,6 +70,7 @@ namespace Sprint4
             if (pictureBoxCamara.Image != null)
             {
                 BarcodeReader br = new BarcodeReader();
+            
                 Result rs = br.Decode((Bitmap)pictureBoxCamara.Image);
                 if (rs != null)
                 {
@@ -80,14 +82,6 @@ namespace Sprint4
                     }
                 }
             }
-        }
-
-        private void btPrubeas_Click(object sender, EventArgs e)
-        {
-            form_AdminCoordinates frm = new form_AdminCoordinates();
-            frm.Show();
-
-            this.Hide();
         }
     }
 }
