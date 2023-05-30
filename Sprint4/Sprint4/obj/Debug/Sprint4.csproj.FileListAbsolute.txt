@@ -45,3 +45,4 @@ E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\bin\Debug\zxing.xml
 E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\bin\Debug\zxing.presentation.xml
 E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\obj\Debug\Sprint4.csproj.CopyComplete
 E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\obj\Debug\Sprint4.form_AdminCoordinates.resources
+E:\S2AM\M13\SIMP's\Sprint#4\Sprint4-Grupo4\Sprint4\Sprint4\obj\Debug\Sprint4.csproj.AssemblyReference.cache
