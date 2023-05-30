@@ -1,5 +1,5 @@
 ﻿
-namespace MESSI
+namespace Sprint4
 {
     partial class form_AdminCoordinates
     {

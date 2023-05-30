@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MESSI
+namespace Sprint4
 {
     public partial class form_AdminCoordinates : Form
     {

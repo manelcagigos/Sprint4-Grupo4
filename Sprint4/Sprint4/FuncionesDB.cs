@@ -8,7 +8,7 @@ using System.Data;
 using System.Configuration;
 
 
-namespace MESSI
+namespace Sprint4
 {
     public class FuncionesDB
     {

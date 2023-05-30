@@ -220,6 +220,8 @@ namespace Sprint4
 
         }
 
+        Dictionary<string, string> coordenades = new Dictionary<string, string>();
+
         private void btVerificarCoordenada_Click(object sender, EventArgs e)
         {
             try
@@ -230,7 +232,31 @@ namespace Sprint4
                 }
                 else
                 {
+                    FuncionesDB db = new FuncionesDB();
+                    DataSet dts = new DataSet();
+                    coordenades.Clear();
 
+                    dts = db.PortarTaula("AdminCoordinates");
+
+                    DataTable tabla = dts.Tables["AdminCoordinates"];
+
+                    foreach (DataRow row in tabla.Rows)
+                    {
+                        string coordenada = row["Coordinate"].ToString();
+                        String numeroAleatorio = row["ValueCoord"].ToString();
+                        coordenades.Add(coordenada, numeroAleatorio);
+                    }
+
+                    foreach(var element in coordenades.Keys)
+                    {
+                        if(element == lbLletraNumero.Text)
+                        {
+                            if(coordenades[element] == tbCodiCoordenada.Text)
+                            {
+                                btVerificarCoordenada.BackColor = Color.Green;
+                            }
+                        }
+                    }
                 }
             }
             catch(Exception ex)
