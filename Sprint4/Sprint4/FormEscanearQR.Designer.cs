@@ -65,7 +65,7 @@ namespace Sprint4
             this.pictureBoxCamara.Location = new System.Drawing.Point(348, 10);
             this.pictureBoxCamara.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxCamara.Name = "pictureBoxCamara";
-            this.pictureBoxCamara.Size = new System.Drawing.Size(353, 341);
+            this.pictureBoxCamara.Size = new System.Drawing.Size(566, 341);
             this.pictureBoxCamara.TabIndex = 20;
             this.pictureBoxCamara.TabStop = false;
             // 
@@ -126,7 +126,7 @@ namespace Sprint4
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(711, 383);
+            this.ClientSize = new System.Drawing.Size(926, 383);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbNomUsuari);

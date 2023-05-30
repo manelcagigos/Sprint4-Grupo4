@@ -32,9 +32,9 @@ namespace Sprint4
         private void btValidarQR_Click(object sender, EventArgs e)
         {
             FuncionesDB func = new FuncionesDB();
-            if (func.GetByQuerry("select * from Users where idUser =" + tb_usercode).Tables.Count > 0)
+            if (func.GetByQuerry("select * from Users where idUser =" + tb_usercode.Text).Tables.Count > 0)
             {
-                lbNomUsuari.Text = func.GetByQuerry("select descUser from Users where idUser = " + tb_usercode).Tables[0].AsEnumerable().First().ToString(); ; ;
+                lbNomUsuari.Text = func.GetByQuerry("select descUser from Users where idUser = " + tb_usercode.Text).Tables[0].AsEnumerable().First()[0].ToString();
                 vd = new VideoCaptureDevice(fic[comboBox1.SelectedIndex].MonikerString);
                 vd.NewFrame += new NewFrameEventHandler(vd_NewFrame);
                 //video https://www.youtube.com/watch?v=0_u-9nykBrg
@@ -70,6 +70,7 @@ namespace Sprint4
             if (pictureBoxCamara.Image != null)
             {
                 BarcodeReader br = new BarcodeReader();
+            
                 Result rs = br.Decode((Bitmap)pictureBoxCamara.Image);
                 if (rs != null)
                 {
