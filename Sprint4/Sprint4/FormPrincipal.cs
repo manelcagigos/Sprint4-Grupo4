@@ -113,7 +113,7 @@ namespace Sprint4
                 LletraNumero = "";
             }
 
-            LletraNumero = LletrasNumeros[R.Next(0, 21)];
+            LletraNumero = LletrasNumeros[R.Next(0, 20)];
 
             lbLletraNumero.Text = LletraNumero;
         }
@@ -217,7 +217,9 @@ namespace Sprint4
 
         private void btObrirCoordenadas_Click(object sender, EventArgs e)
         {
-
+            ObrirTauPas1 fm = new ObrirTauPas1();
+            fm.Show();
+            this.Hide();
         }
 
         Dictionary<string, string> coordenades = new Dictionary<string, string>();

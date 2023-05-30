@@ -109,7 +109,7 @@ namespace Sprint4
 
             if (qrOK)
             {
-                if (GetByQuerry("select * from Users where codeUser =" + tb_usercode.Text).Tables.Count > 0)
+                if (GetByQuerry("select * from Users where codeUser = '" + tb_usercode.Text + "'").Tables.Count > 0)
                 {
 
                     QRCodeGenerator qr = new QRCodeGenerator();
@@ -130,7 +130,9 @@ namespace Sprint4
 
                     }
 
-                    Ejecutar("insert into CodeChain values(" + GetByQuerry("select * from Users where codeUser =" + tb_usercode.Text).Tables[0].Columns[0].ToString()+ ",'" + codeChainMasked + "','" + /*code.ToString() +*/ "');");
+
+
+                    Ejecutar("insert into CodeChain values(" + GetByQuerry("select idUser from Users where codeUser = '" + tb_usercode.Text + "'").Tables[0].AsEnumerable().First()[0].ToString()+ ",'" + codeChainMasked + "', NULL );");
                 }
             }
             else

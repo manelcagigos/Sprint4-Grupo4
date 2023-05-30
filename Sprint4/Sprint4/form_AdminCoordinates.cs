@@ -20,11 +20,17 @@ namespace Sprint4
 
         private void form_AdminCoordinates_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Assembly asm = Assembly.GetEntryAssembly();
-            Type formtype = asm.GetType(string.Format("{0}.{1}", "Sprint4", "FormPrincipal"));
+            //Assembly asm = Assembly.GetEntryAssembly();
+            //Type formtype = asm.GetType(string.Format("{0}.{1}", "Sprint4", "FormPrincipal"));
 
-            Form frmTrustedUsers = (Form)Activator.CreateInstance(formtype);
-            frmTrustedUsers.Show();
+            //Form frmTrustedUsers = (Form)Activator.CreateInstance(formtype);
+            //frmTrustedUsers.Show();
+
+            if (Application.OpenForms["FormPrincipal"] != null)
+            {
+                Form formulario = Application.OpenForms["FormPrincipal"];
+                formulario.Show();
+            }
 
             this.Hide();
         }
